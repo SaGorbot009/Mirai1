@@ -27,7 +27,7 @@ module.exports.run = async function ({ api, event, args }) {
         const { response: result } = response.data;
 
         const userNames = await getUserNames(api, event.senderID);
-        const responseMessage = `${result}\n\n👤 𝖰𝗎𝖾𝗌𝗍𝗂𝗈𝗇 𝖠𝗌𝗄𝖾𝖽 𝖻𝗒: ${userNames.join(', ')}`;
+        const responseMessage = `${result}\n\n👤 Question Asked By: ${userNames.join(', ')}`;
 
         api.editMessage(responseMessage, waitMessage.messageID, event.threadID, event.messageID);
     } catch (error) {
